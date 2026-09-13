@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 2px solid #B8794B;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+::selection { background: #B8794B; color: #F6F3EA; }
+
+.contour-field {
+  background-image: repeating-radial-gradient(
+    circle at 15% 20%, transparent 0, transparent 38px,
+    rgba(20, 32, 15, 0.05) 39px, rgba(20, 32, 15, 0.05) 40px
+  );
+}
+
+.contour-field-light {
+  background-image: repeating-radial-gradient(
+    circle at 85% 30%, transparent 0, transparent 38px,
+    rgba(246, 243, 234, 0.06) 39px, rgba(246, 243, 234, 0.06) 40px
+  );
+}
+
+.text-balance { text-wrap: balance; }
